@@ -1,0 +1,41 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ms1
+spec:
+  selector:
+    app: ms1
+  ports:
+  - port: 3000
+    targetPort: 3000
+    nodePort: 30100
+  type: NodePort
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ms2
+spec:
+  selector:
+    app: ms2
+  ports:
+  - port: 3001
+    targetPort: 3001
+    nodePort: 30200
+  type: NodePort
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: ms3
+spec:
+  selector:
+    app: ms3
+  ports:
+  - port: 3002
+    targetPort: 3002
+    nodePort: 30300
+  type: NodePort
